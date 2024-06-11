@@ -1,17 +1,28 @@
 <?php
-include_once "bbdd/bd.php";
+$db = "multiauto";
+$host = "localhost";
+$user = "root";
+$password = "";
+
 
 
 try {
-    include_once "bbdd/bd.php";
-  
+
   $username = $_POST["username"];
   $pass = $_POST["pass"];
 
-  $query = $con->prepare("SELECT * FROM usuarios WHERE correo = :username AND password = :pass");
-  $query->execute([":username" => $username, ":pass" => $pass]);
-  $result = $query->fetch(PDO::FETCH_ASSOC);
-  echo json_encode($result);
+  
+
+
+
+
+  include_once "db_empresa.php";
+                        
+  $query = "SELECT * FROM usuarios WHERE correo = '"$username"' AND password = '"$pass"';";
+  $res = mysqli_query($con, $query);
+
+
+  echo json_encode($res);
 } catch (PDOException $e) {
   echo "Hubo un error: " . $e->getMessage();
 }
