@@ -1,3 +1,7 @@
+<?php
+
+
+?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head><script src="../assets/js/color-modes.js"></script>
@@ -108,30 +112,37 @@
 
     
 <main class="form-signin w-100 m-auto">
-  <form>
-    <img class="mb-4" src="" alt="" width="72" height="57">
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+  <form action="#" id="formLogin">
+    <img class="mb-4" src="" alt="" width="72" height="57" src="">
+    
+    <h1 class="h3 mb-3 fw-normal">Por favor Registrese para iniciar Sesion</h1>
 
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
+      <input type="text" class="form-control" name="username" id="username" placeholder="nombre">
+      <label for="floatingInput">Correo</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Password</label>
+      <input type="password" class="form-control" name="pass" id="pass" placeholder="Password">
+      <label for="floatingPassword">Contraseña</label>
     </div>
 
     <div class="form-check text-start my-3">
       <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
       <label class="form-check-label" for="flexCheckDefault">
-        Remember me
+        Recuerdame
       </label>
     </div>
-    <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2024</p>
+    <button class="btn btn-primary w-100 py-2" type="button" id="btnLogin">Iniciar Sesion</button>
+    <p class="mt-5 mb-3 text-body-secondary">&copy; 2024</p>
   </form>
+  <script src="js/index.js"></script>
 </main>
-<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+
 
     </body>
 </html>
+<?php
+
+
+?>

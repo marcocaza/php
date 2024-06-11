@@ -28,7 +28,7 @@
                         $imagenSubida = fopen($_FILES['foto']['tmp_name'], 'r');
                         $binariosImagen = fread($imagenSubida, $tamanoArchivo);
                         include_once "db_empresa.php";
-                        $con = mysqli_connect($db_host, $db_user, $db_pass, $db_database, 3307);
+                        
                         $binariosImagen = mysqli_escape_string($con, $binariosImagen);
                         $dataTime = date("Y-m-d H:i:s");
                         $query = "INSERT INTO imagenes (imagen, fecha) values 

@@ -25,7 +25,7 @@
                     <tbody>
                         <?php
                         include_once "db_empresa.php";
-                        $con = mysqli_connect($db_host, $db_user, $db_pass, $db_database, 3307);
+                        
                         $query = "SELECT imagen, fecha FROM imagenes;";
                         $res = mysqli_query($con, $query);
                         while ($row = mysqli_fetch_assoc($res)) {
