@@ -5,6 +5,9 @@ btnLogin.addEventListener('click', event => {
         alert("Completa todos los campos...")
         return false
     }
+
+
+
     const form = new FormData(formLogin)
     form.append("function", "login")
     fetch("data/users.php", {
@@ -16,7 +19,10 @@ btnLogin.addEventListener('click', event => {
             if (!json) {
                 alert("No has podido iniciar sesión")
                 return false
+            } else {
+                alert("si entra");
             }
             sessionStorage.setItem("user", JSON.stringify(json))
         })
+
 })
