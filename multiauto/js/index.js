@@ -16,13 +16,20 @@ btnLogin.addEventListener('click', event => {
         })
         .then(response => response.json())
         .then(json => {
-            if (!json) {
-                alert("No has podido iniciar sesión")
-                return false
+
+            if (json == "no") {
+                console.log(json);
+                alert("no ha ingresado bien los datos");
+            } else if (username.value == json["correo"] && pass.value == json["password"]) {
+                console.log(json);
+                alert('datos correctos');
+                location.href = "vistas/index.html";
             } else {
-                alert("si entra");
+
             }
-            sessionStorage.setItem("user", JSON.stringify(json))
+
+
+
         })
 
 })
