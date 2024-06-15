@@ -20,10 +20,14 @@ btnLogin.addEventListener('click', event => {
             if (json == "no") {
                 console.log(json);
                 alert("no ha ingresado bien los datos");
+                
+                document.getElementById("estadoLogin").textContent="no ha ingresado bien los datos del usuario";
             } else if (username.value == json["correo"] && pass.value == json["password"]) {
                 console.log(json);
                 alert('datos correctos');
-                location.href = "vistas/index.html";
+                
+                document.getElementById("estadoLogin").textContent ="datos correctos";
+                location.href = "vistas/home.php";
             } else {
 
             }

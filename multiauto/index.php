@@ -10,6 +10,9 @@
 <body>
   <form action="#" id="formLogin">
     <div>
+      <label for="estadoLogin" name="estadoLogin" id="estadoLogin"></label>
+    </div>
+    <div>
       <label for="username">Usuario</label>
       <input type="text" name="username" id="username">
     </div>
@@ -24,3 +27,7 @@
   <script src="js/index.js"></script>
 </body>
 </html>
+
+<?php
+
+?>
