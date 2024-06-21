@@ -25,9 +25,17 @@ btnLogin.addEventListener('click', event => {
             } else if (username.value == json["correo"] && pass.value == json["password"]) {
                 console.log(json);
                 alert('datos correctos');
+                $.ajax({
+                    url:'../index.php',
+                    type:'POST',
+                    data:{
+                        username:json["correo"],
+                        pass:json["password"]
+                    }
+                })
                 
                 document.getElementById("estadoLogin").textContent ="datos correctos";
-                location.href = "vistas/home.php";
+                
             } else {
 
             }
