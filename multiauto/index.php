@@ -29,10 +29,6 @@
 </html>
 
 <?php
-if ( isset( $_POST["username"] ) ) {
-  $username= $_POST['username'];
-$pass= $_POST['pass'];
-echo''.$username.''.$pass.'';
-}
+
 
 ?>

@@ -8,8 +8,8 @@ btnLogin.addEventListener('click', event => {
 
 
 
-    const form = new FormData(formLogin)
-    form.append("function", "login")
+    const form = new FormData(formLogin);
+    form.append("function", "login");
     fetch("data/users.php", {
             method: "POST",
             body: form
@@ -25,15 +25,8 @@ btnLogin.addEventListener('click', event => {
             } else if (username.value == json["correo"] && pass.value == json["password"]) {
                 console.log(json);
                 alert('datos correctos');
-                $.ajax({
-                    url:'../index.php',
-                    type:'POST',
-                    data:{
-                        username:json["correo"],
-                        pass:json["password"]
-                    }
-                })
-                
+                enviarDato(json["correo"], json["password"]);
+                location.href = 'sesiones/isLogin.php';
                 document.getElementById("estadoLogin").textContent ="datos correctos";
                 
             } else {
@@ -43,5 +36,19 @@ btnLogin.addEventListener('click', event => {
 
 
         })
-
+        
 })
+
+async function enviarDato(userr, pass){
+    var dato = {usuario: userr, contra: pass};
+    const result = JSON.stringify(dato);
+    console.log(result);
+    let resp = await fetch("sesiones/isLogin.php", {
+        method: "POST",
+        mode: 'cors',
+        cache: 'no-cache',
+        body: result
+    });
+    console.log(resp);
+              
+}
